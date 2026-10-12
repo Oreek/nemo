@@ -7,3 +7,4 @@ Current Plan:
 
 Current State of Things:
 - setup nextjs project along with basic setup of material_ui component library for use with next.js, will probably continue with actually starting the code project tomorrow...
+- fully setup neonDB with Drizzle ORM for handling the backend of the app (storing notes, tags, profile info and such)
