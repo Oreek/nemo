@@ -31,21 +31,23 @@
 
 import * as React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { ThemeProvider } from '@mui/material/styles';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
 import { Html } from 'next/document';
 
-export default function RootLayout(props:{ children: React.ReactNode }) {
+export default function RootLayout({children}: {children: React.ReactNode }) {
   return (
     <html>
       <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            {props.children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <StyledEngineProvider injectFirst>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              {children}
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </StyledEngineProvider>
       </body>
     </html>
   );
